@@ -15,7 +15,7 @@ public class Account {
     private int nConto;
     private List<Operation> operations = new ArrayList<>();
 
-    private int progressivoNConto = 1;
+    private static int progressivoNConto = 1;
 
     public Account(String correntista, float importoIniziale, int dataApertura) {
 	super();

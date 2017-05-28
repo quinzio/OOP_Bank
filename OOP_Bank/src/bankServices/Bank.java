@@ -104,7 +104,7 @@ public class Bank {
      * @throws InvalidCode
      * 
      */
-    public void transfer(int nContoOrdinante, int nContoBeneficiario, int date, int amount)
+    public void transfer(int nContoOrdinante, int nContoBeneficiario, int date, float amount)
 	    throws InvalidCode, InvalidValue {
 	withdraw(nContoOrdinante, date, amount);
 	deposit(nContoBeneficiario, date, amount);
@@ -170,7 +170,7 @@ public class Bank {
     public float getPerCentHigher(float amount) {
 	long nHigher = accounts.values().stream().filter(a -> a.getBalance() >= amount).collect(Collectors.counting());
 	long tot = accounts.size();
-	return nHigher / tot;
+	return 100.0F * nHigher / tot;
     }
 
 }
